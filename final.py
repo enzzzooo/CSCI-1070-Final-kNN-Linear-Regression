@@ -1,6 +1,7 @@
 # note: use "scratchmodule rather than scikit, pandas or numpy"
 import csv
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 import sys
 sys.path.insert(0, "./data-science-from-scratch-master")
 from scratch.simple_linear_regression import *
@@ -49,6 +50,12 @@ plt.axhline(0, color="gray", linewidth=0.8, zorder=1)
 plt.axvline(0, color="gray", linewidth=0.8, zorder=1)
 plt.grid(True, linestyle="--", linewidth=0.5, alpha=0.5)
 plt.legend()
+
+# add comma between thousands
+comma_formatter = FuncFormatter(lambda value, _: f"{value:,.0f}")
+ax = plt.gca()
+ax.xaxis.set_major_formatter(comma_formatter)
+ax.yaxis.set_major_formatter(comma_formatter)
 
 plt.show()
 
