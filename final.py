@@ -38,7 +38,7 @@ print(f"Calculated Slope (beta or m): {beta}")
 
 plt.figure()
 plt.scatter(median_house_value, average_rooms_per_house, color="red", edgecolors="black", zorder=3, label="Housing")
-plt.title("Housing Data")
+plt.title("Housing Data per Census Block")
 plt.xlabel("Median House Value")
 plt.ylabel("Average Rooms per Household")
 # best fit line
